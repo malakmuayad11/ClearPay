@@ -1,8 +1,9 @@
 .header {
   display: flex;
   gap: var(--spacing-2);
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: var(--spacing-4);
 }
 
 .header__nav {
