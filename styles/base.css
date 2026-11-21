@@ -33,6 +33,7 @@ body {
       transparent 38%
     ),
     var(--color-background);
+  background-repeat: no-repeat;
   line-height: var(--line-height-normal);
 }
 

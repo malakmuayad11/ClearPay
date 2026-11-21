@@ -1,0 +1,119 @@
+/* Hero container */
+.hero__container {
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero content */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  flex: 1;
+  width: 100%;
+}
+
+/* Greeting */
+.hero__greeting {
+  display: inline-block;
+  width: fit-content;
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Main heading */
+.hero__title {
+  background: linear-gradient(100deg, #211a3c 0%, #51458d 48%, #8d82c8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: clamp(2.25rem, 7vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.hero__role {
+  margin-top: -12px;
+  color: var(--color-secondary);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero__role span {
+  font-style: italic;
+}
+
+/* Description */
+.hero__description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+}
+
+/* Actions */
+.hero__actions {
+  width: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.hero__actions button {
+  width: 100%;
+}
+
+/* Hero image */
+.hero__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.8;
+  min-width: 0;
+}
+
+.hero__profile-image {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .hero__container {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-10);
+  }
+
+  .hero__content {
+    flex: 1.2;
+  }
+
+  .hero__image {
+    flex: 0.8;
+  }
+
+  .hero__profile-image {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+  }
+}
