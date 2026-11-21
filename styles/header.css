@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  display: inline-block;
+}
+
+.header__nav a:active {
+  border-bottom: 2px solid var(--color-secondary);
+}

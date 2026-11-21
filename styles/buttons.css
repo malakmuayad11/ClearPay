@@ -1,0 +1,51 @@
+/* Primary Button */
+.button--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  padding: var(--spacing-2);
+
+  background-color: var(--color-button);
+  color: var(--color-text-inverse);
+
+  font-size: var(--font-size-base);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover */
+.button--primary:hover {
+  background-color: var(--color-button-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Active */
+.button--primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Keyboard Focus */
+.button--primary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Disabled */
+.button--primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
