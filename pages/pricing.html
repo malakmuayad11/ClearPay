@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClearPay | Pricing</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <div class="hero__container">
+        <div class="hero__content">
+          <span class="hero__greeting">Simple & Transparent</span>
+          <h2 class="hero__title">Flexible Plans for Every Need</h2>
+          <small class="hero__description">
+            Choose the plan that fits you.
+          </small>
+        </div>
+      </div>
+
+      <!-- Pricing Calculator -->
+      <section class="pricing-calculator">
+        <div class="pricing-calculator__container">
+          <!-- Left Column: Customization -->
+          <div class="pricing-calculator__section">
+            <header class="pricing-calculator__header">
+              <img class="pricing-calculator__icon" src="" alt="" />
+              <h3 class="pricing-calculator__heading">
+                Customize your estimate
+              </h3>
+              <p class="pricing-calculator__description">
+                Select your plan and monthly transaction volume.
+              </p>
+            </header>
+
+            <!-- Pricing Plans -->
+            <section class="pricing-calculator__cards-container">
+              <article class="pricing-calculator__card">
+                <div class="pricing-calculator__card-header">
+                  <input
+                    type="radio"
+                    name="plan"
+                    id="starter"
+                    value="starter"
+                  />
+                  <label for="starter">Starter</label>
+                </div>
+                <p class="pricing-calculator__card-fee">2% fee</p>
+              </article>
+
+              <article class="pricing-calculator__card">
+                <div class="pricing-calculator__card-header">
+                  <input
+                    type="radio"
+                    name="plan"
+                    id="professional"
+                    value="professional"
+                    checked
+                  />
+                  <label for="professional">Professional</label>
+                </div>
+                <p class="pricing-calculator__card-fee">1.5% fee</p>
+              </article>
+
+              <article class="pricing-calculator__card">
+                <div class="pricing-calculator__card-header">
+                  <input
+                    type="radio"
+                    name="plan"
+                    id="business"
+                    value="business"
+                  />
+                  <label for="business">Business</label>
+                </div>
+                <p class="pricing-calculator__card-fee">1% fee</p>
+              </article>
+            </section>
+
+            <!-- Transaction Volume -->
+            <div class="pricing-calculator__volume">
+              <header class="pricing-calculator__volume-header">
+                <h4 class="pricing-calculator__volume-title">
+                  Monthly transaction volume
+                </h4>
+                <p class="pricing-calculator__volume-value" id="volume-value">
+                  $6,000
+                </p>
+              </header>
+
+              <input
+                class="pricing-calculator__volume-slider"
+                type="range"
+                name="volume"
+                id="volume"
+                min="1000"
+                max="50000"
+                step="1000"
+                value="6000"
+              />
+
+              <div class="pricing-calculator__volume-range">
+                <p>$1,000</p>
+                <p>$50,000</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Estimated Result -->
+          <section class="pricing-calculator__result">
+            <div class="pricing-calculator__estimate">
+              <h4 class="pricing-calculator__estimate-title">
+                Your estimated monthly cost
+              </h4>
+              <p class="pricing-calculator__estimate-value" id="estimated-cost">
+                $90.00
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="cards-container">
+        <article class="card">
+          <div>
+            <img
+              class="card__icon"
+              src="../assets/icons/rocket-icon.svg"
+              alt="Rocket Icon"
+              loading="eager"
+            />
+            <header class="card__header">
+              <h2>Starter</h2>
+              <small>Perfect for small business.</small>
+            </header>
+          </div>
+          <p><span class="card__price">$29</span> / month</p>
+          <ul>
+            <li>2% transaction fee</li>
+            <li>Basic analytics</li>
+            <li>Email support</li>
+          </ul>
+          <button class="button--primary">Get Started &rarr;</button>
+        </article>
+
+        <article class="card">
+          <img
+            class="card__icon"
+            src="../assets/icons/star-icon.svg"
+            alt="Star Icon"
+            loading="eager"
+          />
+          <header class="card__header">
+            <h2>Professional</h2>
+            <small>Ideal for growing businesses.</small>
+          </header>
+          <p><span class="card__price">$79</span> / month</p>
+          <ul>
+            <li>1.5% transaction fee</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="button--primary">Get Started &rarr;</button>
+        </article>
+
+        <article class="card">
+          <img
+            class="card__icon"
+            src="../assets/icons/crown-icon.svg"
+            alt="Crown Icon"
+            loading="eager"
+          />
+          <header class="card__header">
+            <h2>Business</h2>
+            <small>For high-volume business.</small>
+          </header>
+          <p><span class="card__price">$129</span> / month</p>
+          <ul>
+            <li>1% transaction fee</li>
+            <li>Customer reports</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <button class="button--primary">Get Started &rarr;</button>
+        </article>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../scripts/main.js"></script>
+  </body>
+</html>

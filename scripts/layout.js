@@ -1,4 +1,4 @@
-async function loadComponent(selector, url) {
+export async function loadComponent(selector, url) {
   const container = document.querySelector(selector);
   if (!container) return;
 
@@ -17,6 +17,3 @@ async function loadComponent(selector, url) {
     });
   }
 }
-
-loadComponent("#header", "/components/header.html");
-loadComponent("#footer", "/components/footer.html");

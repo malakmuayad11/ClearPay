@@ -56,3 +56,17 @@
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__header > h2 {
+  margin: 0;
+}
+
+.card__price {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}

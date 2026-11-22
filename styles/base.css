@@ -44,3 +44,7 @@ button {
 .muted {
   color: var(--color-surface-muted);
 }
+
+li::marker {
+  content: "✔️ ";
+}
