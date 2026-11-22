@@ -30,7 +30,34 @@
         </div>
       </div>
 
-      <section class="cards-container">
+      <div class="features__filters">
+        <button aria-pressed="true" data-filter="all" class="button--primary">
+          All
+        </button>
+        <button
+          aria-pressed="false"
+          data-filter="payments"
+          class="button--secondary"
+        >
+          Payments
+        </button>
+        <button
+          aria-pressed="false"
+          data-filter="security"
+          class="button--secondary"
+        >
+          Security
+        </button>
+        <button
+          aria-pressed="false"
+          data-filter="analytics"
+          class="button--secondary"
+        >
+          Analytics
+        </button>
+      </div>
+
+      <section id="features-card" class="cards-container">
         <article class="card">
           <img
             class="card__icon"
