@@ -5,4 +5,8 @@ export const UI = {
   estimatedCost: document.getElementById("estimated-cost"),
   featuresButtons: document.querySelectorAll(".features__filters > button"),
   featuresCards: document.getElementById("features-card"),
+  nameField: document.getElementById("name"),
+  emailField: document.getElementById("email"),
+  messageField: document.getElementById("message"),
+  sendBtn: document.getElementById("send-btn"),
 };

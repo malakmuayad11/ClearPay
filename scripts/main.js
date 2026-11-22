@@ -2,6 +2,7 @@ import { loadComponent } from "./layout.js";
 import { UI } from "./UI.js";
 import { changeEstimatedResult, getEstimatedResult } from "./calculator.js";
 import { changeFeatures } from "./features.js";
+import { submitForm } from "./contact.js";
 
 loadComponent("#header", "/components/header.html");
 loadComponent("#footer", "/components/footer.html");
@@ -26,3 +27,7 @@ if (UI.featuresButtons.length > 0 && UI.featuresCards) {
     button.addEventListener("click", changeFeatures);
   });
 }
+
+if (UI.sendBtn) {
+  UI.sendBtn.addEventListener("click", submitForm);
+} // we should use static
