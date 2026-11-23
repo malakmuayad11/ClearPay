@@ -1,4 +1,5 @@
 export const UI = {
+  root: document.documentElement,
   volumeValue: document.getElementById("volume-value"),
   volume: document.getElementById("volume"),
   transactionFees: document.querySelectorAll('input[name="plan"]'),
@@ -9,4 +10,6 @@ export const UI = {
   emailField: document.getElementById("email"),
   messageField: document.getElementById("message"),
   sendBtn: document.getElementById("send-btn"),
+  lightBtn: document.getElementById("light-btn"),
+  darkBtn: document.getElementById("dark-btn"),
 };

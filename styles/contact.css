@@ -15,10 +15,6 @@
   max-width: 450px;
 }
 
-.contact__greeting {
-  color: var(--color-primary);
-}
-
 .contact__title {
   margin: var(--spacing-2) 0;
 }
@@ -51,7 +47,7 @@
 .contact__information-item > a,
 .contact__information-item > p {
   margin: 0;
-  color: var(--color-text-primary);
+  color: var(--color-text);
   text-decoration: none;
   line-height: 1.5;
 }
@@ -87,6 +83,7 @@
   font: inherit;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
 }
 
 .contact-form__input textarea {

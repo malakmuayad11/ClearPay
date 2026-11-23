@@ -39,7 +39,7 @@
 
 /* Main heading */
 .hero__title {
-  background: linear-gradient(100deg, #211a3c 0%, #51458d 48%, #8d82c8 100%);
+  background: var(--text-background);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

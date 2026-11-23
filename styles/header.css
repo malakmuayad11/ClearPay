@@ -14,12 +14,34 @@
 
 .header__nav a {
   text-decoration: none;
-  color: var(--color-text-primary);
+  color: var(--color-text);
   display: inline-block;
 }
 
 .header__nav a[aria-current="page"] {
   border-bottom: 2px solid var(--color-secondary);
+}
+
+.theme-container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-2);
+  border-radius: 999px;
+}
+
+.theme-container > button {
+  border: none;
+  background-color: transparent;
+  padding: var(--spacing-2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.theme-container > button.selected-theme {
+  background-color: var(--color-secondary);
 }
 
 @media (max-width: 512px) {
