@@ -63,3 +63,23 @@ if (UI.featuresButtons.length > 0 && UI.featuresCards) {
 if (UI.sendBtn) {
   UI.sendBtn.addEventListener("click", submitForm);
 }
+
+// Animations
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  },
+);
+
+document.querySelectorAll(".animate-on-scroll").forEach((section) => {
+  observer.observe(section);
+});
