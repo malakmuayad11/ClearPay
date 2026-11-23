@@ -46,7 +46,8 @@
 
 @media (max-width: 512px) {
   header > .button--primary,
-  .header__nav a:last-child {
+  .header__nav a:last-child,
+  .header__title {
     display: none;
   }
 }

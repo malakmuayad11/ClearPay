@@ -81,6 +81,13 @@
     transform var(--transition-fast);
 }
 
+.button--secondary > a {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--spacing-3);
+  color: inherit;
+}
+
 /* Hover */
 .button--secondary:hover {
   background-color: var(--color-accent);

@@ -1,4 +1,13 @@
 .footer {
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   padding: var(--spacing-2);
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: space-between;
+  color: #fff;
+}
+
+.social__links {
+  display: flex;
+  gap: var(--spacing-2);
 }
