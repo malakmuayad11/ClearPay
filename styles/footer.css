@@ -4,16 +4,25 @@
   display: flex;
   gap: var(--spacing-2);
   justify-content: space-between;
+  align-items: center;
   color: #fff;
 }
 
 .social__links {
   display: flex;
+  align-items: center;
   gap: var(--spacing-2);
 }
 
 .social__links img {
-  width: 24px;
-  height: 24px;
-  transform: translateY(14px);
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+/* GitHub icon */
+.social__links a:first-child img {
+  width: 22px;
+  height: 22px;
 }
