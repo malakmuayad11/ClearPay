@@ -11,3 +11,9 @@
   display: flex;
   gap: var(--spacing-2);
 }
+
+.social__links img {
+  width: 24px;
+  height: 24px;
+  transform: translateY(14px);
+}
