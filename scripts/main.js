@@ -6,9 +6,11 @@ import { submitForm } from "./contact.js";
 import { switchTheme } from "./theme.js";
 import { getTheme } from "./persistence.js";
 
-// Load components first
-await loadComponent("#header", "/components/header.html");
-await loadComponent("#footer", "/components/footer.html");
+// Load Components first
+const basePath = window.location.pathname.includes("/pages/") ? "../" : "./";
+
+loadComponent("#header", `${basePath}components/header.html`);
+loadComponent("#footer", `${basePath}components/footer.html`);
 
 // Initialize theme
 const lightBtn = document.getElementById("light-btn");
