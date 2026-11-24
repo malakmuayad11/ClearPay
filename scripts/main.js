@@ -20,6 +20,22 @@ async function initializeLayout() {
       ),
     ]);
 
+    const currentPage = window.location.pathname;
+
+    document.querySelectorAll(".header__nav a").forEach((link) => {
+      const linkPath = new URL(link.href).pathname;
+
+      const isActive =
+        linkPath === currentPage ||
+        (currentPage.endsWith("/") && linkPath.endsWith("/index.html"));
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
     // Select theme buttons after the header loads
     const lightBtn = document.getElementById("light-btn");
     const darkBtn = document.getElementById("dark-btn");
