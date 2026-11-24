@@ -46,12 +46,28 @@
 
         <!-- Hero Image -->
         <div class="hero__image">
-          <img
-            src="../assets/about-hero-img.png"
-            alt="Hero Image"
-            class="hero__profile-image"
-            loading="eager"
-          />
+          <picture>
+            <!-- Mobile -->
+            <source
+              media="(max-width: 480px)"
+              srcset="../assets/about-hero-mobile.webp"
+            />
+
+            <!-- Tablet -->
+            <source
+              media="(max-width: 768px)"
+              srcset="../assets/about-hero-tablet.webp"
+            />
+
+            <!-- Desktop fallback -->
+            <img
+              src="../assets/about-hero-img.webp"
+              alt="ClearPay payment experience"
+              class="hero__profile-image"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
       <section class="about-content__container animate-on-scroll">

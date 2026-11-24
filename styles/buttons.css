@@ -84,7 +84,7 @@
 .button--secondary > a {
   display: inline-block;
   text-decoration: none;
-  padding: var(--spacing-3);
+  padding: var(--spacing-2);
   color: inherit;
 }
 

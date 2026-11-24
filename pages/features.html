@@ -43,11 +43,33 @@
 
         <!-- Hero Image -->
         <div class="hero__image">
-          <img
-            src="../assets/badge.png"
-            alt="Badge Image"
-            class="hero__profile-image"
-          />
+          <picture>
+            <!-- Mobile -->
+            <source
+              media="(max-width: 480px)"
+              srcset="../assets/badge-mobile.webp"
+              type="image/webp"
+            />
+
+            <!-- Tablet -->
+            <source
+              media="(max-width: 768px)"
+              srcset="../assets/badge-tablet.webp"
+              type="image/webp"
+            />
+
+            <!-- Desktop -->
+            <source srcset="../assets/badge.webp" type="image/webp" />
+
+            <!-- Fallback -->
+            <img
+              src="../assets/badge.png"
+              alt="ClearPay feature badge"
+              class="hero__profile-image"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
 

@@ -54,18 +54,40 @@
             </button>
 
             <button class="button--secondary">
-              <a href="pages/about.html">Learn More &darr;</a>
+              <p>Learn More &darr;</p>
             </button>
           </div>
         </div>
 
         <!-- Hero Image -->
         <div class="hero__image">
-          <img
-            src="./assets/hero-img.png"
-            alt="Hero Image"
-            class="hero__profile-image"
-          />
+          <picture>
+            <!-- Mobile -->
+            <source
+              media="(max-width: 480px)"
+              srcset="./assets/hero-img-mobile.webp"
+              type="image/webp"
+            />
+
+            <!-- Tablet -->
+            <source
+              media="(max-width: 768px)"
+              srcset="./assets/hero-img-tablet.webp"
+              type="image/webp"
+            />
+
+            <!-- Desktop -->
+            <source srcset="./assets/hero-img.webp" type="image/webp" />
+
+            <!-- Fallback -->
+            <img
+              src="./assets/hero-img.png"
+              alt="ClearPay payment management dashboard"
+              class="hero__profile-image"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
     </main>
