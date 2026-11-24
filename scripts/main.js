@@ -7,10 +7,15 @@ import { switchTheme } from "./theme.js";
 import { getTheme } from "./persistence.js";
 
 // Load Components first
-const basePath = window.location.pathname.includes("/pages/") ? "../" : "./";
 
-loadComponent("#header", `${basePath}components/header.html`);
-loadComponent("#footer", `${basePath}components/footer.html`);
+loadComponent(
+  "#header",
+  "https://malakmuayad11.github.io/ClearPay/components/header.html",
+);
+loadComponent(
+  "#footer",
+  "https://malakmuayad11.github.io/ClearPay/components/footer.html",
+);
 
 // Initialize theme
 const lightBtn = document.getElementById("light-btn");
