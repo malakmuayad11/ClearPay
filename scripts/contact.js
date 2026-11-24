@@ -19,6 +19,7 @@ export function submitForm() {
     message = "✖ Email format is invalid.";
   } else {
     message = "✔ Your message has been sent successfully!";
+    resetForm();
   }
 
   UI.toast.textContent = message;
@@ -28,5 +29,4 @@ export function submitForm() {
   setTimeout(() => {
     UI.toast.classList.remove("toast--visible");
   }, 3000);
-  resetForm();
 }
