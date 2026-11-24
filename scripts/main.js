@@ -6,46 +6,56 @@ import { submitForm } from "./contact.js";
 import { switchTheme } from "./theme.js";
 import { getTheme } from "./persistence.js";
 
-// Load Components first
+// Load Components and Initialize Theme
+async function initializeLayout() {
+  try {
+    await Promise.all([
+      loadComponent(
+        "#header",
+        "https://malakmuayad11.github.io/ClearPay/components/header.html",
+      ),
+      loadComponent(
+        "#footer",
+        "https://malakmuayad11.github.io/ClearPay/components/footer.html",
+      ),
+    ]);
 
-loadComponent(
-  "#header",
-  "https://malakmuayad11.github.io/ClearPay/components/header.html",
-);
-loadComponent(
-  "#footer",
-  "https://malakmuayad11.github.io/ClearPay/components/footer.html",
-);
+    // Select theme buttons after the header loads
+    const lightBtn = document.getElementById("light-btn");
+    const darkBtn = document.getElementById("dark-btn");
 
-// Initialize theme
-const lightBtn = document.getElementById("light-btn");
-const darkBtn = document.getElementById("dark-btn");
+    // Initialize saved theme
+    const savedTheme = getTheme() || "light";
+    switchTheme(UI.root, savedTheme);
 
-const savedTheme = getTheme() || "light";
-switchTheme(UI.root, savedTheme);
+    // Update selected theme button
+    lightBtn?.classList.toggle("selected-theme", savedTheme === "light");
 
-// Update selected theme button
-lightBtn?.classList.toggle("selected-theme", savedTheme === "light");
-darkBtn?.classList.toggle("selected-theme", savedTheme === "dark");
+    darkBtn?.classList.toggle("selected-theme", savedTheme === "dark");
 
-// Register theme event listeners
-if (lightBtn && darkBtn) {
-  darkBtn.addEventListener("click", () => {
-    switchTheme(UI.root, "dark");
+    // Register theme event listeners
+    darkBtn?.addEventListener("click", () => {
+      switchTheme(UI.root, "dark");
 
-    darkBtn.classList.add("selected-theme");
-    lightBtn.classList.remove("selected-theme");
-  });
+      darkBtn.classList.add("selected-theme");
+      lightBtn?.classList.remove("selected-theme");
+    });
 
-  lightBtn.addEventListener("click", () => {
-    switchTheme(UI.root, "light");
+    lightBtn?.addEventListener("click", () => {
+      switchTheme(UI.root, "light");
 
-    lightBtn.classList.add("selected-theme");
-    darkBtn.classList.remove("selected-theme");
-  });
+      lightBtn.classList.add("selected-theme");
+      darkBtn?.classList.remove("selected-theme");
+    });
+  } catch (error) {
+    console.error("Error initializing layout:", error);
+  }
 }
 
-// Initialize calculator only on pages that contain it
+// Initialize layout
+initializeLayout();
+
+// Calculator
 if (UI.volume && UI.estimatedCost) {
   UI.volume.addEventListener("input", (e) => {
     changeEstimatedResult(e);
@@ -59,16 +69,23 @@ if (UI.volume && UI.estimatedCost) {
   getEstimatedResult();
 }
 
-// Initialize features only on pages that contain them
+// Features
 if (UI.featuresButtons.length > 0 && UI.featuresCards) {
   UI.featuresButtons.forEach((button) => {
     button.addEventListener("click", changeFeatures);
   });
 }
 
-// Initialize contact form
+// Contact Form
 if (UI.sendBtn) {
   UI.sendBtn.addEventListener("click", submitForm);
+}
+
+if (UI.form) {
+  UI.form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitForm();
+  });
 }
 
 // Animations
@@ -77,7 +94,6 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
-
         observer.unobserve(entry.target);
       }
     });
@@ -90,10 +106,3 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".animate-on-scroll").forEach((section) => {
   observer.observe(section);
 });
-
-if (UI.form) {
-  UI.form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    submitForm();
-  });
-}
