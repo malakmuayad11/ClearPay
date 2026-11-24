@@ -1,19 +1,25 @@
-export async function loadComponent(selector, url) {
-  const container = document.querySelector(selector);
-  if (!container) return;
+const BASE_PATH = "/ClearPay/";
 
-  const response = await fetch(url);
-  container.innerHTML = await response.text();
+export async function loadComponent(selector, path) {
+  const element = document.querySelector(selector);
 
-  if (selector === "#header") {
-    const currentPath = window.location.pathname;
+  if (!element) return;
 
-    document.querySelectorAll(".header__nav a").forEach((link) => {
-      const linkPath = new URL(link.href).pathname;
+  const response = await fetch(path);
+  const html = await response.text();
 
-      if (linkPath === currentPath) {
-        link.setAttribute("aria-current", "page");
-      }
-    });
-  }
+  element.innerHTML = html;
+
+  // Fix component asset and navigation paths.
+  element.querySelectorAll("[src], [href]").forEach((item) => {
+    const attribute = item.hasAttribute("src") ? "src" : "href";
+    const value = item.getAttribute(attribute);
+
+    if (value.startsWith("../") || value.startsWith("./")) {
+      item.setAttribute(
+        attribute,
+        BASE_PATH + value.replace(/^(\.\.\/|\.\/)+/, ""),
+      );
+    }
+  });
 }

@@ -91,7 +91,9 @@ document.querySelectorAll(".animate-on-scroll").forEach((section) => {
   observer.observe(section);
 });
 
-UI.form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  submitForm();
-});
+if (UI.form) {
+  UI.form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitForm();
+  });
+}
