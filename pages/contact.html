@@ -74,7 +74,7 @@
 
         <!-- Contact Form -->
         <section class="contact-form-container">
-          <form class="contact-form" action="#">
+          <form class="contact-form" action="#" id="form" novalidate>
             <div class="contact-form__input">
               <label for="name">Name *</label>
               <input type="text" name="name" id="name" required />
@@ -95,16 +95,13 @@
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              class="contact-form__button button--primary"
-              id="send-btn"
-            >
+            <button type="submit" class="contact-form__button button--primary">
               Send Message &rarr;
             </button>
           </form>
         </section>
       </div>
+      <div class="toast" id="toast"></div>
     </main>
 
     <div id="footer"></div>

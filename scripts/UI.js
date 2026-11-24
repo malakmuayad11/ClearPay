@@ -9,7 +9,8 @@ export const UI = {
   nameField: document.getElementById("name"),
   emailField: document.getElementById("email"),
   messageField: document.getElementById("message"),
-  sendBtn: document.getElementById("send-btn"),
   lightBtn: document.getElementById("light-btn"),
   darkBtn: document.getElementById("dark-btn"),
+  toast: document.getElementById("toast"),
+  form: document.getElementById("form"),
 };
